@@ -1,0 +1,38 @@
+
+
+class Solution{
+    //Function to find the leaders in the array.
+    static ArrayList<Integer> leaders(int arr[], int n){
+        // Your code here
+        ArrayList<Integer> p=new  ArrayList<Integer>();
+       // int k=0;
+        boolean  flag=false;
+        for(int i=0;i<n;i++)
+        {
+            if(i==n-1)
+            {
+               p.add(arr[i]);  
+            }
+            else{
+            int j=i+1;
+            while(j<n)
+            {
+               
+                if(arr[i]>=arr[j])
+                {
+                    flag=true;
+                }
+                else
+                {
+                    flag=false;
+                    break;
+                }
+                 j++;
+            }
+            if(flag)
+                p.add(arr[i]);
+            }
+        }
+        return p;
+    }
+}
